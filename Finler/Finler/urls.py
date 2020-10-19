@@ -22,5 +22,7 @@ admin.site.index_title = "Finler admin"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('home.urls'))
+    path('',include('home.urls')),
+    path('',include('accounts.urls')),
+    path('',include('user_home.urls'))
 ]
