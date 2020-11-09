@@ -51,3 +51,7 @@ def activate_account(request, uidb64, token):
 
 def login(request):
 	return render(request, 'accounts/login.html')
+
+def logout(request):
+    authenticate.logout(request)
+    return render(request,'home/Base.html')
