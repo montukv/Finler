@@ -131,13 +131,22 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
-
+#for user registratoin form
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'home'
 
+#for email auth
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'finler.official@gmail.com'
-EMAIL_HOST_PASSWORD = 'PASSWORD NEEDED'
+EMAIL_HOST_PASSWORD = 'Finler998MAH$'
 EMAIL_PORT = 587
+
+#for restriction user to access page if not logged in
+LOGIN_URL = "/login"
+
+#for unique fields in database
+AUTHENTICATION_BACKENDS = [
+     'django.contrib.auth.backends.ModelBackend'
+]
