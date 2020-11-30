@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        html,
+        body,
+        header,
+        .view {
+            scroll-behavior: smooth;
+            height: 100%;
+        }
+    </style>
+    {% load static %}
+    <!-- JQuery for pie charts and normal bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    {% include 'user_home/navbar_after_login.html'%}
+    <div class="container">
+        <div class="row my-3">
+            <div class="col">
+                <h1>Your monthwise report</h1>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-body">
+                <canvas id="chBar"></canvas>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    </div>
+
+
+    <div class="container my-2 py-5">
+
+
+        <!--Section: Block Content-->
+        <section>
+
+
+            <div class="card-body">
+
+                <h4 class="text-center font-weight-bold mb-4">Summary report for month of November</h4>
+
+                <hr>
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-7 mb-4">
+
+                        <canvas id="pieChart" class="mt-4"></canvas>
+
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-5 mb-4">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Money</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Savings</td>
+                                    <td id="cell-Savings"></td>
+                                </tr>
+                                <tr>
+                                    <td>Expense</td>
+                                    <td id="cell-Expense"></td>
+                                </tr>
+
+
+                                <a type="button" class="btn btn-success mb-4" href='/user_home_dashboard'>Update</a>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+
+            </div>
+    </div>
+
+
+    </section>
+
+
+    </div>
+
+    <script>
+
+        // chart colors
+        var colors = ['#46BFBD', '#F7464A'];
+
+        /* bar chart */
+        var chBar = document.getElementById("chBar");
+        if (chBar) {
+            new Chart(chBar, {
+                type: 'bar',
+                data: {
+                    labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+                    datasets: [{
+                        data: [17560, 14000, 15000, 2000, 3000],
+                        backgroundColor: colors[0]
+                    },
+                    {
+                        data: [20000, 23000, 24000, 40000, 38000],
+                        backgroundColor: colors[1]
+                    }]
+                },
+                options: {
+                    legend: {
+                        display: false
+                    },
+                    scales: {
+                        xAxes: [{
+                            barPercentage: 0.4,
+                            categoryPercentage: 0.5
+                        }]
+                    }
+                }
+
+            });
+        }
+
+
+
+        /*pie chart*/
+
+        // Data
+        const Savings = 40000;
+        const Expense = 2000;
+
+
+
+        //pie
+        var ctxP = document.getElementById("pieChart").getContext('2d');
+        var myPieChart = new Chart(ctxP, {
+            type: 'pie',
+            data: {
+                labels: ["Credit", "Expense"],
+                datasets: [{
+                    data: [Savings, Expense],
+                    backgroundColor: ["#46BFBD", "#F7464A"],
+                    hoverBackgroundColor: ["#5AD3D1", "#FF5A5E"],
+                    borderWidth: 4,
+                    borderColor: '#eee'
+                }]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 20,
+                        boxWidth: 10
+                    }
+                },
+                plugins: {
+                    datalabels: {
+                        formatter: (value, ctx) => {
+                            let sum = 0;
+                            let dataArr = ctx.chart.data.datasets[0].data;
+                            dataArr.map(data => {
+                                sum += data;
+                            });
+                            let percentage = (value * 100 / sum).toFixed(2) + "%";
+                            return percentage;
+                        },
+                        color: 'white',
+                        labels: {
+                            title: {
+                                font: {
+                                    size: '10'
+                                }
+                            }
+                        }
+                    }
+                },
+                tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+                        }
+                    }
+                }
+            }
+        });
+
+        // Table
+        document.getElementById("cell-Savings").innerHTML = Savings;
+        document.getElementById("cell-Expense").innerHTML = Expense;
+
+
+    </script>
+</body>
