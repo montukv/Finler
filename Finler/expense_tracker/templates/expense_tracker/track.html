@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expense Tracker </title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+
+{% load static %}
+<nav class="navbar navbar-dark bg-dark">
+  <div class="nav">
+                <a class='center'>Hello, {{ user }}</a>
+                <ul class="left">
+                    <li><a href='logout' class='btn.btn-danger'>Logout</a></li>
+                </ul>
+   </div>
+</nav>
+        
+ <br>
+<form class="gform pure-form pure-form-stacked" action=" " method="POST">
+  {% csrf_token %}
+	<div class="row">
+      <div class="col-md-4 mb-4">
+        <label for="username">User Name</label>
+        <input type="text" readonly class="form-control-plaintext" id="username" name="username" value="{{ user}}">
+      </div>
+  </div>
+  <div class="row">
+        <div class="col-md-4 mb-4">
+          <label for="name">Expense Name</label>
+          <input type="text" id="name" name="name" class="form-control" placeholder="Expense Name">
+        </div>
+  </div>
+  <div class="row">
+        <div class="col-md-4 mb-4">
+          
+          <input type="number" id="cost" name="cost" class="form-control" placeholder="Cost">
+        </div>
+  </div>
+  <div class="row">
+        <div class="col-md-4 mb-4">
+          
+          <input type="date" id="date" name="date" class="form-control" placeholder="Date">
+        </div>
+  </div>
+ 
+  <div class="row">
+            <button type="submit" class="btn btn-info">Submit</button>
+  </div>
+  </div>
+</form>
+
+<h2>Expense List</h2>
+
+{% block content%}
+{% for i in obj %}
+
+  <table id="t01"style="width:25%">
+  <tr>
+    <th>name</th>
+    <th>expense_name</th>
+    <th>cost</th>
+  </tr>
+  <tr>
+    <td>{{i.username}}</td>
+    <td>{{i.name}}</td>
+    <td>{{i.cost}}</td>
+  </tr>
+ 
+</table>
+{% endfor %}
+{% endblock %}
+
+
+</body>
+</html>
