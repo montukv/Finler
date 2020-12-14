@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'home',
     'accounts',
     'user_home',
+    'expense_tracker',
     'crispy_forms',
 
 ]

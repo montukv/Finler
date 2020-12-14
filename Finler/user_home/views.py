@@ -10,3 +10,7 @@ def home(request):
 def profile(request):
     return render(request,"user_home/profile.html")
  
+@login_required
+def user_home_dashboard(request):
+    
+    return render(request,"user_home/user_home_dashboard.html")
