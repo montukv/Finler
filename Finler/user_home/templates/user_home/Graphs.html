@@ -1,88 +1,21 @@
 {%load static%}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-<div class="container">
-    <div class="row my-3">
-        <div class="col">
-
-            <h1>Your monthwise report 
-            </h1>
-        </div>
-    </div>
-
-
-    <div class="card">
-        <div class="card-body">
+<div class="container-fluid">
+<div class="row justify-content-center">
+        <div class="col-md-5 ml-2 mt-5 border-0 p-5 shadow" style="border-radius: 2%;">
+            <h4 class="text-center font-weight-bold mb-4">Your monthwise report</h4>
             <canvas id="chBar"></canvas>
         </div>
-    </div>
-</div>
-</div>
 
-</div>
-
-
-<div class="container my-2 py-5">
-
-
-    <!--Section: Block Content-->
-    <section>
-
-
-        <div class="card-body">
-
+    <div class="col-md-5 ml-5 mt-5 border-0 p-5 shadow" style="border-radius: 2%;">
             <h4 class="text-center font-weight-bold mb-4">Summary report for month of November</h4>
-
-            <hr>
-
-            <!--Grid row-->
-            <div class="row">
-
-                <!--Grid column-->
-                <div class="col-md-7 mb-4">
-
-                    <canvas id="pieChart" class="mt-4"></canvas>
-
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-md-5 mb-4">
-
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Type</th>
-                                <th scope="col">Money</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Savings</td>
-                                <td id="cell-Savings"></td>
-                            </tr>
-                            <tr>
-                                <td>Expense</td>
-                                <td id="cell-Expense"></td>
-                            </tr>
-
-
-
-                        </tbody>
-                    </table>
-
-                </div>
-                <!--Grid column-->
-            </div>
-            <!--Grid row-->
-
+            <canvas id="pieChart"></canvas>
         </div>
 </div>
-
-
-</section>
-
-
 </div>
+
+
+
 <script>
 
     // chart colors
@@ -106,12 +39,12 @@
             },
             options: {
                 legend: {
-                    display: false
+                    display: true
                 },
                 scales: {
                     xAxes: [{
-                        barPercentage: 0.4,
-                        categoryPercentage: 0.5
+                        barPercentage: 0.6,
+                        categoryPercentage: 0.8
                     }]
                 }
             }
