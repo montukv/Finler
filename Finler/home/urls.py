@@ -6,5 +6,4 @@ from home import views
 
 urlpatterns = [
     path('',views.index,name='Base'),
-    path('emicalc',views.emicalc,name='emicalc'),
 ]

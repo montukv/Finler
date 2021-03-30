@@ -14,3 +14,6 @@ def profile(request):
 def user_home_dashboard(request):
     
     return render(request,"user_home/user_home_dashboard.html")
+
+def emicalc(request):
+    return render(request,"home/emicalc.html")

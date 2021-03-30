@@ -5,6 +5,4 @@ from django.contrib.auth.forms import UserCreationForm
 def index(request):
     return render(request,"home/Base.html")
 
-def emicalc(request):
-    return render(request,"home/emicalc.html")
  

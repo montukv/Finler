@@ -7,4 +7,5 @@ from . import views
 urlpatterns = [
     path('home',views.home,name='home'),
     path('profile',views.profile,name='profile'),
+    path('emicalc',views.emicalc,name='emicalc'),
 ]
