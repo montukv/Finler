@@ -17,3 +17,6 @@ def user_home_dashboard(request):
 
 def emicalc(request):
     return render(request,"user_home/emicalc.html")
+
+def blogs(request):
+    return render(request,"user_home/blogs.html")
