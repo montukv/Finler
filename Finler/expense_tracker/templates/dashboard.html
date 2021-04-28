@@ -2,92 +2,94 @@
 
 <html>
 
-    <head>
+<head>
 
-        <title>Budget App</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    <title>Budget App</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    </head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
 
-    <body>
+<body>
     {% include 'user_home/navbar_after_login.html'%}
     {% include 'user_home/Graphs.html'%}
-    
-        <br>
-        <div class="section">
-            <div class="row">
-                <form class="col s12" action='{% url "add item" %}' method='post'>
-                    {% csrf_token %}
-                    <div class="row">
-                        <div class="container center">
-                            <br>
-                            <br>
-                            <div class="input-field row s3">
-                                <input placeholder="Expense name" name="expense_name" id='expense_name' type='text' class='validate'>
-                                <label for='expense_name'>Expense name</label>
-                            </div>
-                            <div class="input-field row s3">
-                                <input placeholder='Amount' name='cost' id='cost' type='text' class='validate'>
-                                <label for='cost'>Amount</label>
-                            </div>
-                            <div class="input-field row s3">
-                                <input placeholder='Date of Expense' name="expense_date" id="expense_date" type="text" class='datepicker'>
-                                <label for="expense_date">Expense Date</label>
-                            </div>
-                            <button class="btn btn-success" type="submit" name="action">Add Expense
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
 
-        <div class="section">
-            <div class="row">
-                <div class="container">
-                    <div class="col s6">
-                        <table class="striped centered responsive-table">
-                            <thead>
-                                <tr>
-                                    <th>Item</th>
-                                    <th>Amount</th>
-                                    <th>Date</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
+    <br>
 
-                            <tbody>
-                                {% for expense_item in expense_items %}
-                                <tr>
-                                    <td>{{ expense_item.expense_name }}</td>
-                                    <td>{{ expense_item.cost }}</td>
-                                    <td>{{ expense_item.date_added}}</td>
-                                    <td></td>
-                                </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
+    <div class="container">
+        <div class="form-group" action='{% url "add item" %}' method='post'>
+            {% csrf_token %}
+            <br>
+            <br>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <input class="border-0 bshadow-sm col-9" placeholder="Expense name" name="expense_name" id='expense_name' type='text'
+                            class='validate'>
                     </div>
+                    <div class="col">
+                        <input class="border-0 shadow-sm" placeholder='Amount' name='cost' id='cost' type='text' class='validate'>
+                    </div>
+                    <div class="col">
+                        <input class="border-0 shadow-sm" placeholder='Date of Expense' name="expense_date" id="expense_date" type="text"
+                            class='datepicker'>
+                    </div>
+                    <button class="btn btn-outline-success" type="submit" name="action">Add Expense
+                    </button>
+
                 </div>
+
+            </div>
+
         </div>
+    </div>
 
-            
-        </div>
-        {% include 'user_home/footer.html'%}
+    <div class="container shadow mt-5">
+        <table class="table table-borderless  mb-5 ">
+            <thead>
+                <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for expense_item in expense_items %}
+                <tr>
+                    <td>{{ expense_item.expense_name }}</td>
+                    <td>{{ expense_item.cost }}</td>
+                    <td>{{ expense_item.date_added}}</td>
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+    </div>
+    {% include 'user_home/footer.html'%}
 
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.datepicker');
+            var instances = M.Datepicker.init(elems, { format: 'yyyy-mm-dd' });
+        });
+    </script>
 
-        <script type="text/javascript">
-            document.addEventListener('DOMContentLoaded', function() {
-                var elems = document.querySelectorAll('.datepicker');
-                var instances = M.Datepicker.init(elems, {format:'yyyy-mm-dd'});
-            });
-        </script>
-    </body>
+</body>
 
 </html>
-
