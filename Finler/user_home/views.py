@@ -20,3 +20,13 @@ def emicalc(request):
 
 def blogs(request):
     return render(request,"user_home/blogs.html")
+
+def blog1(request):
+    return render(request,"user_home/blog1.html")
+
+def blog2(request):
+    return render(request,"user_home/blog2.html")
+
+def blog3(request):
+    return render(request,"user_home/blog3.html")
+
