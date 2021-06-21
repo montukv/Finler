@@ -133,7 +133,7 @@
             <h1>Example headline.</h1>
             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
               metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-rounded shadow-sm btn-outline-success" href="#" role="button">Learn more</a></p>
+            <p><a class="btn btn-rounded shadow-sm btn-outline-success" href="/blog1" role="button">Learn more</a></p>
           </div>
         </div>
       </div>
@@ -143,7 +143,7 @@
           <div class="carousel-caption text-dark">
             <h1 class="pt-5">Today's Financial market</h1>
             <p>Crash due to rise in COVID-19 cases</p>
-            <p><a class="btn btn-rounded shadow-sm btn-outline-info" href="#" role="button">Learn more</a></p>
+            <p><a class="btn btn-rounded shadow-sm btn-outline-info" href="/blog2" role="button">Learn more</a></p>
           </div>
         </div>
       </div>
@@ -154,7 +154,7 @@
             <h1>One more for good measure.</h1>
             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
               metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-rounded shadow-sm btn-outline-warning" href="#" role="button">Learn more</a></p>
+            <p><a class="btn btn-rounded shadow-sm btn-outline-warning" href="/blog3" role="button">Learn more</a></p>
           </div>
         </div>
       </div>
@@ -226,32 +226,84 @@
 
   </div><!-- /.container -->
 
-  <!-- Marketing messaging and featurettes
-    ================================================== -->
-  <!-- Wrap the rest of the page in another container to center all the content. -->
+  <div id="contact">
+    <div class="container z-depth-1 my-5 px-0">
 
+
+      <section class="p-5 my-md-5 text-center"
+        style="background-image: url(static/images/resrarch.png); background-size: cover; ">
+
+        <!-- Section heading -->
+        <h3 class="text-center font-weight-bold mt-5 mb-3">Subscribe to our newsletter</h3>
+        <!-- Section description -->
+        <h4 class="text-center font-weight-normal  mx-auto mb-4 pb-2">Delivered straight to your mail!</h4>
+
+        <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net"
+          action="https://script.google.com/macros/s/AKfycbxyfIrWe6MZpN8tcK3EIYmitzzRKJAYR6lbQ1PrVeY6F-73wkHx/exec">
+
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <input type="text" id="name" name="name" class="form-control" placeholder="First Name">
+            </div>
+            <div class="col-md-4 mb-4">
+              <input type="text" id="email" name="email" class="form-control" placeholder="Last Name">
+            </div>
+            <div class="col-md-4 mb-4">
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="Phone (optional)">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 mb-4">
+              <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject">
+            </div>
+          </div>
+          <div class="row">
+          <div class="col-md-12 mb-4">
+            <input id="email" class="form-control" name="email" type="email" value="" required placeholder="example@xyz.com" />
+          </div>
+        </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group mb-4">
+                <textarea class="form-control rounded" id="message" name="message" rows="3"
+                  placeholder="How can we help?"></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-info">Submit</button>
+              </div>
+            </div>
+          </div>
+
+        </form>
+
+      </section>
+
+
+
+    </div>
+  </div>
+
+
+  
   <div class="container marketing">
-    <div class=" mb-5">
+    <div class="mb-3">
       <h1 class="featurette-heading">Authors!</h1>
     </div>
-    <hr class="mb-5">
+    <hr>
     <!-- Three columns of text below the carousel -->
     <div class="row">
       <div class="col-lg-4">
-        <img class="rounded-circle" src="static/images/cartoon.png" alt="Generic placeholder image" width="190"
-          height="150">
+        <img src="static/images/AB1.png" alt="Generic placeholder image" class="img-fluid">
         <h3 class=" featurette-heading mt-3 mb-4">Abhinay</h3>
         <p>Avid techie, Cricket Enthusiast and financial follower</p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <img class="rounded-circle" src="static/images/cartoon.png" alt="Generic placeholder image" width="190"
-          height="150">
+        <img class="img-fluid mt-1" src="static/images/montu.jpg" alt="Generic placeholder image">
         <h3 class=" featurette-heading mt-3 mb-4">Montukeshwar</h3>
         <p>Avid techie, Cricket Enthusiast and financial follower</p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <img class="rounded-circle" src="static/images/cartoon.png" alt="Generic placeholder image" width="190"
-          height="150">
+        <img src="static/images/har.jpg" alt="Generic placeholder image" class="img-fluid">
         <h3 class=" featurette-heading mt-3 mb-4">Harshit</h3>
         <p>Avid techie, Cricket Enthusiast and financial follower</p>
       </div><!-- /.col-lg-4 -->

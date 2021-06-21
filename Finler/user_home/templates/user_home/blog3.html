@@ -27,7 +27,20 @@
 
 <body>
     {% include "user_home/navbar_after_login.html" %}
-    <a class="btn btn-outline-primary ml-4 mt-3" href="/blogs">Go back to headlines</a>
+    <center>
+        <div class="row">
+            <div class="col-sm">
+                <a class="btn btn-outline-info btn-sm  mt-3" href="/blog2">
+                    < Previous news</a>
+            </div>
+            <div class="col-sm">
+                <a class="btn btn-outline-info btn-sm mt-3" href="/blogs">Go back to headlines</a>
+            </div>
+            <div class="col-sm">
+                <a class="btn btn-outline-info  btn-sm mt-3" href="/blogs">Next news ></a>
+            </div>
+        </div>
+    </center>
     <h1 class="text-justify m-4">Mutual Fund Vs Stock: Four reasons for choosing mutual funds over buying stocks</h1>
     <p class="text-justify lead m-4"><i>Here are some reasons why mutual funds hold a little edge over shares in terms
             of investment subject to individual rationality.</i>
@@ -83,8 +96,44 @@
             experience and interest. Finler.com advises user that they are not to be hled responsible for any losses</i>
     </p>
 
-    <a class="btn btn-outline-primary ml-4" href="/blogs">Go back to headlines</a>
+    <a class="btn btn-outline-info ml-4" href="/blogs">Go back to headlines</a>
+    <hr>
+    <h3 class="m-5">News you may like.</h3>
+    <div class="card-deck m-4">
+        <div class="card">
+            <img class="card-img-top" src="static/images/mutual.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Mutual funds Vs Stocks</h5>
+                <p class="lead">Every expert was once a beginner. Want to start investing? Start with these fundamentals
+                    and follow them to START your investing journey.</p>
+                <a class="btn btn-outline-danger  mb-3" href="/blog3">Know more</a>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top mt-3" src="static/images/stats.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Rakesh Jhunjhunwala's portfolio</h5>
+                <p class="lead">Those who hold Titan shares in their portfolio should maintain trailing stop loss at
+                    ₹1670, say experts.</p>
+                <a class="btn btn-outline-danger  mb-3" href="/blog2">Know more</a>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top mt-5" src="static/images/scam.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Adani Stocks plunge amid twitter storm by Sucheta Dalal</h5>
+                <p class="lead">Stocks like Adani Total Gas vaulted 334 percent in the calendar year till June 11.
+                    Shares of Adani Transmission, Adani Enterprises and Adani Power have jumped between 200 percent and
+                    265 percent in the same period</p>
+                <a class="btn btn-outline-danger  mb-3" href="/blog1">Know more</a>
 
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-outline-info ml-4" href="/blogs">Go back to headlines</a>
     {% include "user_home/footer.html" %}
 
 </body>
