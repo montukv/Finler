@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
 <body>
@@ -71,6 +76,63 @@
 
     </div>
     </div>
+    <div id="contact">
+        <div class="container z-depth-1 my-5 px-0">
+  
+  
+          <section class="p-5 my-md-5 text-center"
+            style="background-image: url(static/images/resrarch.png); background-size: cover; ">
+  
+            <!-- Section heading -->
+            <h3 class="text-center font-weight-bold mt-5 mb-3">Contact Us</h3>
+            <!-- Section description -->
+            <h4 class="text-center font-weight-normal  mx-auto mb-4 pb-2">We would love to hear from you!</h4>
+  
+            <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net"
+              action="https://script.google.com/macros/s/AKfycbxyfIrWe6MZpN8tcK3EIYmitzzRKJAYR6lbQ1PrVeY6F-73wkHx/exec">
+  
+              <div class="row">
+                <div class="col-md-4 mb-4">
+                  <input type="text" id="name" name="name" class="form-control" placeholder="First Name">
+                </div>
+                <div class="col-md-4 mb-4">
+                  <input type="text" id="email" name="email" class="form-control" placeholder="Last Name">
+                </div>
+                <div class="col-md-4 mb-4">
+                  <input type="tel" id="phone" name="phone" class="form-control" placeholder="Phone (optional)">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 mb-4">
+                  <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject">
+                </div>
+              </div>
+              <div class="row">
+              <div class="col-md-12 mb-4">
+                <input id="email" class="form-control" name="email" type="email" value="" required placeholder="example@xyz.com" />
+              </div>
+            </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group mb-4">
+                    <textarea class="form-control rounded" id="message" name="message" rows="3"
+                      placeholder="How can we help?"></textarea>
+                  </div>
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-info">Submit</button>
+                  </div>
+                </div>
+              </div>
+  
+            </form>
+  
+          </section>
+  
+  
+  
+        </div>
+      </div>
+  
     {% include 'user_home/footer.html'%}
 
 
